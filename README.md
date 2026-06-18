@@ -1,4 +1,4 @@
-# Leisure Hub — Leisure Management System
+# Leisure Hub - Leisure Management System
 
 A full-stack web platform built for **New Rekha Cinema Theatre** that serves as a one-stop destination for movie scheduling, ticket booking, leisure activity management, and complete back-office operations.
 
@@ -8,7 +8,7 @@ A full-stack web platform built for **New Rekha Cinema Theatre** that serves as 
 
 ![System Overview](./docs/system-overview.png)
 
-The platform connects a React frontend to a Node.js/Express REST API backed by MongoDB, covering six core operational domains:
+The platform connects a React frontend to a Node.js/Express REST API backed by MongoDB, covering 8 core operational domains:
 
 | Module | Description |
 |---|---|
@@ -175,6 +175,3 @@ This project was developed as a group academic project.
 
 ---
 
-## License
-
-MIT
