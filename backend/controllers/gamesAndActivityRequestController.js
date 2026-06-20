@@ -1,6 +1,5 @@
 import GamesAndActivitiesRequestModel from "../models/GamesAndActivitiesRequestModel.js";
 import fs from "fs";
-import pdf from "html-pdf";
 
 export const createGameAndActivityRequestController = async (req, res) => {
   try {

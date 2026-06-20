@@ -1,72 +1,98 @@
+/* ── Header shell ── */
 .header {
-    background-color: #22335e; /* Dark blue background color */
-    padding: 20px 40px; /* Increased padding for a larger header */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 8px 6px -6px gray;
-    --webkit-box-shadow: 0 8px 6px -6px gray;
-    border-bottom: 0.3px solid gray;
-  }
-  
-  .logo h1 {
-    color: #ffffff; /* White text color */
-    margin: 0;
-    font-size: 28px; /* Increased font size for the logo */
-  }
-  
-  .top-nav-bar {
-    font-size: 17px;
-    line-height: 26px;
-    text-transform: capitalize;
-    font-family: Arial, sans-serif; /* Example font family change */
-  }
-  
-  .top-nav-bar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .top-nav-bar ul li {
-    margin-right: 20px;
-  }
-  
-  .top-nav-bar ul li:last-child {
-    margin-right: 0;
-  }
-  
-  .top-nav-bar ul li a {
-    color: #ffffff; /* White text color */
-    text-decoration: none;
-    padding: 5px 5px;
-  }
-  
-  .top-nav-bar ul li a:hover {
-    text-decoration: none; /* Remove underline on hover */
-    background-color: #3a4d85; /* Darker blue on hover */
-    color: #ffffff; /* White text color on hover */
-    border-radius: 5px; /* Rounded corners on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
-  }
-  
-  .top-nav-bar ul li.active a:hover::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff; /* White underline color on hover */
-  }
-  
-  .active {
-    background-color: #3a4d85; /* White background color */
-    border-bottom: 2px solid rgb(255, 255, 255);
-  }
-  
-  .active a {
-    color: #22335e; /* Blue text color */
-    text-decoration: underline;
-  }
+  background: #0f0c29;
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  /* no border / shadow — hero blends in seamlessly */
+}
+
+/* ── Logo ── */
+.logo h1 {
+  color: #ffffff;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+
+/* ── Nav wrapper ── */
+.top-nav-bar {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.top-nav-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.top-nav-bar ul li {
+  margin: 0;
+}
+
+/* ── Nav links ── */
+.top-nav-bar ul li a {
+  display: block;
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.top-nav-bar ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Active link — works for both old activeClassName="active" and v6/v7 aria-current */
+.top-nav-bar ul li a.active,
+.top-nav-bar ul li a[aria-current="page"] {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+}
+
+.top-nav-bar ul li a.active::after,
+.top-nav-bar ul li a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  background: #93c5fd;
+  border-radius: 2px;
+}
+
+/* Legacy .active class on <li> */
+.top-nav-bar ul li.active > a {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Logo image */
+.top-nav-bar ul img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-left: 8px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
